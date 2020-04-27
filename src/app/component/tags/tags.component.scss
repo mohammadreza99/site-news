@@ -1,0 +1,9 @@
+@import "../../../sass/style.scss";
+
+li:hover {
+    background: darken($lightGray, 10%) !important;
+
+    a {
+        text-decoration: none;
+    }
+}

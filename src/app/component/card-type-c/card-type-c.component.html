@@ -1,0 +1,10 @@
+<div class="wrapper d-flex align-items-center mb-1">
+  <div class="image">
+    <a routerLink="/news/details" [queryParams]="{id:news.id}">
+      <img class="rounded img-thumbnail" [src]="'../../assets/images/news/'+news.media">
+    </a>
+  </div>
+  <div class="title mr-3">
+    <a routerLink="/news/details" [queryParams]="{id:news.id}">{{news.title}}</a>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@import "../../../sass/style.scss";
+
+img:hover {
+    filter: contrast(120%) brightness(97%);
+}
+
+a {
+    color: $titleColor;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $darkGray !important;
+}
+
+img{
+    max-width: 100px;
+}
+
+.title{
+    font-size: 1em !important
+}

@@ -1,0 +1,8 @@
+<div class="card mb-3">
+  <a class="card-text" routerLink="/news/details" [queryParams]="{id:news.id}">
+    <img class="card-img-top" [src]="'../../assets/images/news/'+news.media">
+  </a>
+  <div class="card-body bg-white p-2 text-center">
+    <a class="card-text" routerLink="/news/details" [queryParams]="{id:news.id}">{{news.title}}</a>
+  </div>
+</div>

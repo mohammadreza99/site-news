@@ -1,0 +1,22 @@
+<div class="list-item mb-3" *ngIf="news!=undefined">
+  <div class="row">
+    <div class="col-4" >
+      <a routerLink="/news/details" [queryParams]="{id:news.id}">
+        <img class="img-thumbnail img-fluid rounded mw-100 mh-100" [src]="'../../assets/images/news/'+news.media">
+      </a>
+    </div>
+    <div class="col-8">
+      <a routerLink="/news" [queryParams]="{category:news.category}" class="category">{{category}}</a>
+      <h4 class="title mt-2">
+        <a class="text-dark" routerLink="/news/details" [queryParams]="{id:news.id}">
+          {{news.title}}
+        </a>
+      </h4>
+      <span class="mx-2 border-right"></span>
+      <span class="time">{{news.date}}</span>
+      <p class="summery d-none d-md-block text-justify">
+        {{news.description | slice:0:170}} ....
+      </p>
+    </div>
+  </div>
+</div>

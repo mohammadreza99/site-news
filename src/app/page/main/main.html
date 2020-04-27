@@ -1,0 +1,143 @@
+<div class="container-fluid bg-dark shadow navbar-container border-bottom" dir="rtl" #navbarContainer>
+    <div class="row shadow h-100">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-12 search-bar d-none align-items-center" #searchbar>
+                    <mat-form-field class="w-100" [floatLabel]="'never'">
+                        <input #searchInput (keydown.enter)="search(searchTerm)" [(ngModel)]="searchTerm" matInput
+                            placeholder="عبارت مورد نظر خود را وارد کنید...">
+                        <button mat-icon-button matSuffix (click)="onCloseSearchBar()">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 menu" #menubar>
+                    <nav class="navbar p-0 navbar-expand-md">
+                        <a class="navbar-brand mr-0" routerLink="/home">
+                            <img class="d-block w-100" src="assets/images/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                            (click)="isCollapsed = !isCollapsed">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent"
+                            [collapse]="isCollapsed">
+                            <ul class="navbar-nav text-white p-0">
+                                <li dropdown class="nav-item dropdown">
+                                    <a mat-button id="button-basic" dropdownToggle class="nav-link dropdown-toggle d-flex align-items-baseline"
+                                        aria-controls="dropdown-basic">
+                                        دسته بندی
+                                        <span class="caret mx-2"></span>
+                                    </a>
+                                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right text-right"
+                                        role="menu" aria-labelledby="button-basic">
+                                        <li role="menuitem" *ngFor="let category of categories">
+                                            <a mat-button class="dropdown-item text-right" routerLink="/news"
+                                                [queryParams]="{category:category.id}">{{category.name}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" routerLink="/about-us">درباره ما</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" routerLink="/contact-us">تماس با ما</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav text-white p-0">
+                                <li class="nav-item text-center" (click)="openSerchBar()">
+                                    <a mat-icon-button class="nav-link">
+                                        <mat-icon>search</mat-icon>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid main">
+    <div class="row">
+        <div class="container" dir="rtl">
+            <router-outlet (activate)="onActivate($event)"></router-outlet>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-dark py-4">
+    <div class="row">
+        <div class="container">
+            <div class="row" dir="rtl">
+                <div class="col-md-4">
+                    <h4>دسته ها</h4>
+                    <mat-nav-list class="pt-0">
+                        <a class="text-light" mat-list-item *ngFor="let c of categories" routerLink="/news"
+                            [queryParams]="{category:c.id}">
+                            <mat-icon mat-list-icon>keyboard_arrow_left</mat-icon>
+                            <p mat-line>{{c.name}}</p>
+                        </a>
+                    </mat-nav-list>
+                </div>
+                <div class="col-md-4">
+                    <h4>تماس با ما</h4>
+                    <mat-list class="pt-0">
+                        <mat-list-item>
+                            <mat-icon matListIcon>place</mat-icon>
+                            <p matLine>تهران، پاسداران، میدان قبا، پلاک 74، طبقه 4، واحد 15</p>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon matListIcon>phone</mat-icon>
+                            <p matLine dir="ltr">+98 - 939 188 64 67</p>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon matListIcon>mail_outline</mat-icon>
+                            <p matLine dir="ltr">info@news.com</p>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+                <div class="col-md-4">
+                    <h4>شبکه های اجتماعی</h4>
+                    <button mat-icon-button>
+                        <mat-icon>cloud</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>camera_alt</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>local_post_office</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>near_me</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>rss_feed</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bottom-footer">
+    <div class="row">
+        <div class="container">
+            <div class="row align-items-center" dir="rtl">
+                <div class="col-md-4 text-center text-md-right">
+                    <a class="navbar-brand mr-0 p-0 align-bottom" routerLink="/home">
+                        <img class="d-block w-100" src="assets/images/logo.png">
+                    </a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p class="m-0">کلیه حقوق مادی و معنوی متعلق به این سایت میباشد.</p>
+                </div>
+                <div class="col-md-4 text-left">
+                    Copyright@2010-2018
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

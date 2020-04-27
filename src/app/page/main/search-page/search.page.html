@@ -1,0 +1,13 @@
+<div class="row justify-content-md-center" *ngIf="!loading">
+  <div class="col-md-10">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="title-light lined-title">نتایج جستجو برای <b>{{searchTerm}}</b></h2>
+      </div>
+    </div>
+    <news *ngFor="let n of foundedNews" [news]="n"></news>
+    <empty-list [show]="foundedNews.length == 0"></empty-list>
+  </div>
+</div>
+
+<loading [show]="loading"></loading>

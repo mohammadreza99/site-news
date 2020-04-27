@@ -1,0 +1,32 @@
+@import "./mixin";
+
+.title {
+    @include title;
+}
+
+.title-light {
+    @include title($fontWeight: normal);
+}
+
+.lined-title {
+    overflow: hidden;
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 6px;
+        width: 100%;
+        margin-left: -100%;
+        margin-right: 10px;
+        transform: translateY(0%);
+        border-bottom: 1px solid #999;
+        border-top: 1px solid #999;
+    }
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-1 {
+    opacity: 1;
+}

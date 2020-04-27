@@ -1,0 +1,44 @@
+@import "../../../sass/style.scss";
+
+.navbar-container {
+    transition: all .4s;
+}
+
+.navbar-brand {
+    width: 150px;
+}
+
+.bottom-footer {
+    background-color: $dark;
+    color: $lightGray;
+}
+
+.main {
+    background: #fff !important;
+}
+
+h4 {
+    @include title($color: $lightGray, $fontWeight: normal);
+}
+
+mat-list *, mat-nav-list, .col-md-4 button mat-icon {
+    color: lighten($darkGray, 15%);
+}
+
+@media (min-width: 768px) {
+    .navbar-container {
+        height: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .collapse > ul:first-child a {
+        width: 100%;
+    }
+
+    .navbar-nav li.dropdown a {
+        width: auto;
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,10 @@
+@import "../../../sass/style.scss";
+
+img:hover {
+    filter: contrast(120%) brightness(97%);
+}
+
+a:hover {
+    text-decoration: none;
+    color: $darkGray !important;
+}

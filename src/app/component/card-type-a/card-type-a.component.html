@@ -1,0 +1,8 @@
+<div class="card border-0 bg-transparent">
+  <a routerLink="/news/details" [queryParams]="{id:news.id}">
+    <img class="card-img-top rounded" [src]="'../../assets/images/news/'+news.media">
+  </a>
+  <div class="card-body text-center p-2">
+    <a class="card-text" routerLink="/news/details" [queryParams]="{id:news.id}">{{news.title}}</a>
+  </div>
+</div>

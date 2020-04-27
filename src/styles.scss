@@ -1,0 +1,102 @@
+@import "bootstrap";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+    font-family: iranSans;
+    font-style: normal;
+    font-weight: normal;
+    src: 
+    url("assets/fonts/iran-sans-regular.ttf") format("truetype"),
+    url("assets/fonts/iran-sans-regular.woff"),
+    url("assets/fonts/iran-sans-regular.svg"),
+    url("assets/fonts/iran-sans-regular.eot");
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: 
+    url("assets/fonts/material-icon.woff2") format("woff2"),
+    url("assets/fonts/material-icon.ttf") format("truetype"),
+    url("assets/fonts/material-icon.woff"),
+    url("assets/fonts/material-icon.svg"),
+    url("assets/fonts/material-icon.eot");
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: iranSans !important;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.mat-tab-label,
+.mat-raised-button .mat-button-wrapper,
+.mat-button .mat-button-wrapper,
+.mat-menu-item,
+.mat-form-field,
+.mat-list-item-content,
+.mat-checkbox-label,
+.mat-option-text,
+.mat-select-placeholder,
+.mat-radio-label-content,
+.mat-expansion-panel-body,
+.mat-tab-group,
+.mat-select-value-text,
+.cdk-overlay-container .mat-tooltip,
+mat-panel-title {
+    font-family: iranSans;
+}
+
+.cdk-overlay-container .mat-tooltip {
+    font-size: 13px;
+}
+
+.mat-tab-label {
+    font-size: 16px;
+}
+
+.mat-drawer-content {
+    overflow-x: hidden !important;
+}
+
+.cdk-overlay-pane {
+    top: 64px !important;
+}
+
+.mat-tab-labels {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+

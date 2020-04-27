@@ -1,0 +1,21 @@
+@import "./variable";
+
+@mixin defaultFont($fontSize: $defaultFontSize, $color: $titleColor, $fontWeight: normal) {
+    font-size: $fontSize;
+    color: $color;
+    font-weight: $fontWeight;
+}
+
+@mixin title($fontSize: $titleSize, $color: $titleColor, $fontWeight: bold) {
+    font-size: $fontSize;
+    color: $color;
+    font-weight: $fontWeight;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@mixin subTitle($fontSize: $subTitleSize, $color: $titleColor, $fontWeight:'') {
+    font-size: $fontSize;
+    color: $color;
+    font-weight: $fontWeight;
+}

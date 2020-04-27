@@ -1,0 +1,28 @@
+<h4 class="lined-title title-light">
+  دیدگاه ها
+</h4>
+<form>
+  <mat-form-field class="w-100">
+    <textarea [formControl]="comment" matInput placeholder="دیدگاه خود را وارد کنید..."></textarea>
+    <mat-error *ngIf="comment.hasError('required')">این فیلد الزامی است.</mat-error>
+  </mat-form-field>
+  <div class="d-flex justify-content-center border rounded my-3">
+    <button type="submit" mat-button class="w-100" (click)="onSubmitComment(comment.value)"> ارسال دیدگاه</button>
+  </div>
+</form>
+<div class="border-bottom" *ngFor="let comment of comments">
+  <mat-list>
+    <mat-list-item>
+      <img matListAvatar src="assets/images/user.png">
+      <h3 matLine>
+        {{comment.userName}}
+      </h3>
+      <p matLine>
+        <span> {{comment.date}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+  <p>
+    {{comment.text}}
+  </p>
+</div>

@@ -1,0 +1,26 @@
+@import "../../../sass/style.scss";
+
+.category, .summery {
+    color: $darkGray !important;
+}
+
+.summery {
+    line-height: 27px;
+}
+
+h4 {
+    @include title;
+}
+
+.title a:hover {
+    text-decoration: none;
+    color: $darkGray !important;
+}
+
+.writer, .time {
+    color: lighten($darkGray, 20%);
+}
+
+img:hover {
+    filter: contrast(120%) brightness(97%);
+}
